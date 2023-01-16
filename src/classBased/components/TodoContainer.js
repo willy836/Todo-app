@@ -1,8 +1,8 @@
-import React from "react";
-import { Header } from "./Header";
-import { InputTodo } from "./InputTodo";
-import { TodosList } from "./TodosList";
-import { v4 as uuidv4 } from "uuid";
+import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import { Header } from './Header';
+import { InputTodo } from './InputTodo';
+import { TodosList } from './TodosList';
 
 class TodoContainer extends React.Component {
   state = {
@@ -26,9 +26,7 @@ class TodoContainer extends React.Component {
   delTodo = (id) => {
     this.setState({
       todos: [
-        ...this.state.todos.filter((todo) => {
-          return todo.id !== id;
-        }),
+        ...this.state.todos.filter((todo) => todo.id !== id),
       ],
     });
   };
@@ -36,7 +34,7 @@ class TodoContainer extends React.Component {
   addTodoItem = (title) => {
     const newTodo = {
       id: uuidv4(),
-      title: title,
+      title,
       completed: false,
     };
     this.setState({
@@ -58,12 +56,12 @@ class TodoContainer extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     if (prevState.todos !== this.state.todos) {
       const temp = JSON.stringify(this.state.todos);
-      localStorage.setItem("todos", temp);
+      localStorage.setItem('todos', temp);
     }
   }
 
   componentDidMount() {
-    const temp = localStorage.getItem("todos");
+    const temp = localStorage.getItem('todos');
     const loadedTodos = JSON.parse(temp);
     if (loadedTodos) {
       this.setState({
