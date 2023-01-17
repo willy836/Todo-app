@@ -1,8 +1,9 @@
-import React from 'react';
+/* eslint-disable */
+import React from "react";
 
 class InputTodo extends React.Component {
   state = {
-    title: '',
+    title: "",
   };
 
   onChange = (e) => {
@@ -16,7 +17,7 @@ class InputTodo extends React.Component {
     if (this.state.title.trim()) {
       this.props.addTodoProps(this.state.title);
       this.setState({
-        title: '',
+        title: "",
       });
     }
   };

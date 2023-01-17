@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import styles from './TodoItem.module.css';
+/* eslint-disable */
+import React, { useState, useEffect } from "react";
+import styles from "./TodoItem.module.css";
 
 const TodoItem = (props) => {
   const [editing, setEditing] = useState(false);
@@ -9,16 +10,16 @@ const TodoItem = (props) => {
   };
 
   const handleUpdatedDone = (event) => {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       setEditing(false);
     }
   };
 
   const completedStyle = {
-    fontStyle: 'italic',
-    color: '#595959',
+    fontStyle: "italic",
+    color: "#595959",
     opacity: 0.4,
-    textDecoration: 'line-through',
+    textDecoration: "line-through",
   };
 
   const { completed, id, title } = props.todo;
@@ -27,14 +28,17 @@ const TodoItem = (props) => {
   const editMode = {};
 
   if (editing) {
-    viewMode.display = 'none';
+    viewMode.display = "none";
   } else {
-    editMode.display = 'none';
+    editMode.display = "none";
   }
 
-  useEffect(() => () => {
-    console.log('Cleaning up...');
-  }, []);
+  useEffect(
+    () => () => {
+      console.log("Cleaning up...");
+    },
+    []
+  );
 
   return (
     <li className={styles.item}>

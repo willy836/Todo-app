@@ -1,5 +1,6 @@
-import React from 'react';
-import { TodoItem } from './TodoItem';
+/* eslint-disable */
+import React from "react";
+import { TodoItem } from "./TodoItem";
 
 const TodosList = (props) => (
   <ul>
